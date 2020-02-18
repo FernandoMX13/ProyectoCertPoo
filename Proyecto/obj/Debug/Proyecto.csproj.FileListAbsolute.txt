@@ -1,0 +1,10 @@
+C:\Users\ferna\source\repos\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\ferna\source\repos\Proyecto\bin\Debug\Proyecto.exe
+C:\Users\ferna\source\repos\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\ferna\source\repos\Proyecto\obj\Debug\Proyecto.csprojAssemblyReference.cache
+C:\Users\ferna\source\repos\Proyecto\obj\Debug\Proyecto.Login.resources
+C:\Users\ferna\source\repos\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
+C:\Users\ferna\source\repos\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.cache
+C:\Users\ferna\source\repos\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\ferna\source\repos\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\ferna\source\repos\Proyecto\obj\Debug\Proyecto.Principal.resources
