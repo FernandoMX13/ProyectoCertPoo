@@ -16,5 +16,15 @@ namespace Proyecto
         {
             InitializeComponent();
         }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            //this.Dispose();
+        }
+
+        private void salirMenu_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

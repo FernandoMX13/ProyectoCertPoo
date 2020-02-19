@@ -71,7 +71,7 @@ namespace Proyecto
         private void LoginBoton_Click(object sender, EventArgs e)
         {
             string checkUser = UsuarioBox.Text;
-            if (Users.ContainsKey(checkUser)) 
+            if (Users.ContainsKey(checkUser))
             {
                 string checkPassword = getSHA256(ContrasenaBox.Text);
                 if (Users[checkUser] == checkPassword)

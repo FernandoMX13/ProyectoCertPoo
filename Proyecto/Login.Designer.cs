@@ -60,7 +60,6 @@
             this.ContrasenaBox.PasswordChar = '*';
             this.ContrasenaBox.Size = new System.Drawing.Size(360, 20);
             this.ContrasenaBox.TabIndex = 2;
-            this.ContrasenaBox.UseSystemPasswordChar = true;
             // 
             // UsuarioBox
             // 
