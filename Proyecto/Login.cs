@@ -76,10 +76,11 @@ namespace Proyecto
                 string checkPassword = getSHA256(ContrasenaBox.Text);
                 if (Users[checkUser] == checkPassword)
                 {
-                    MessageBox.Show("Acceso corecto.");
+                    MessageBox.Show("Acceso correcto.");
                     Principal principal = new Principal();
-                    principal.Visible = true;
-                    this.Visible = false;
+                    this.Hide();
+                    principal.ShowDialog();
+                    this.Close();
                 }
                 else
                     MessageBox.Show("Contraseña incorrecta.");

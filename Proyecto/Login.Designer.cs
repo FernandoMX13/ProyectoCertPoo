@@ -57,8 +57,10 @@
             // 
             this.ContrasenaBox.Location = new System.Drawing.Point(100, 55);
             this.ContrasenaBox.Name = "ContrasenaBox";
+            this.ContrasenaBox.PasswordChar = '*';
             this.ContrasenaBox.Size = new System.Drawing.Size(360, 20);
             this.ContrasenaBox.TabIndex = 2;
+            this.ContrasenaBox.UseSystemPasswordChar = true;
             // 
             // UsuarioBox
             // 
