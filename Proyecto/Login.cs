@@ -14,7 +14,7 @@ namespace Proyecto
 {
     public partial class Login : Form
     {
-        public static Dictionary<string, string> Users = new Dictionary<string, string>();
+        public static Dictionary<string, string []> Users = new Dictionary<string, string []>();
         public static string getSHA256(string text)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(text);
@@ -31,16 +31,17 @@ namespace Proyecto
         {
             using (StreamWriter File = new StreamWriter(doc))
             {
-                File.WriteLine("Dialid|de2d51a06c782f54b99a8c899506dd91004136653456fe8494000c9029243b59");
-                File.WriteLine("Mau|5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5");
-                File.WriteLine("Fer|65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5");
+                File.WriteLine("Dialid|de2d51a06c782f54b99a8c899506dd91004136653456fe8494000c9029243b59|gerente");
+                File.WriteLine("Mau|5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5|administrador");
+                File.WriteLine("Fer|65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5|cajero");
             }
         }
         public Login()
         {
+            Users.Clear();
             string line;
             string rutaDoc = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "BecarioMart");
-            string[] Usrpass = new string[2];
+            string[] Usrpass = new string[3];
             string doc = Path.Combine(rutaDoc, "usu");
             DirectoryInfo dInfo = new DirectoryInfo(rutaDoc);
             FileInfo passwd = new FileInfo(doc);
@@ -58,7 +59,8 @@ namespace Proyecto
             while ((line = file.ReadLine()) != null)
             {
                 Usrpass = line.Split('|');
-                Users.Add(Usrpass[0], Usrpass[1]);
+                string[] test = { Usrpass[1], Usrpass[2] };
+                Users.Add(Usrpass[0], test);
             }
             InitializeComponent();
         }
@@ -74,13 +76,28 @@ namespace Proyecto
             if (Users.ContainsKey(checkUser))
             {
                 string checkPassword = getSHA256(ContrasenaBox.Text);
-                if (Users[checkUser] == checkPassword)
+                string[] pass = Users[checkUser];
+                if (pass[0].ToString() == checkPassword)
                 {
-                    MessageBox.Show("Acceso correcto.");
-                    Principal principal = new Principal();
-                    this.Hide();
-                    principal.ShowDialog();
-                    this.Close();
+                    if (pass[1].ToString() == "gerente")
+                        MessageBox.Show("Bienvenido Gerente");
+                    else if (pass[1].ToString() == "administrador")
+                    {
+                        MessageBox.Show("Bienvenido Administrador");
+                        AdminMenu adminMenu = new AdminMenu();
+                        this.Hide();
+                        adminMenu.ShowDialog();
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bienvenido Cajero");
+                        Principal principal = new Principal();
+                        this.Hide();
+                        principal.ShowDialog();
+                        this.Close();
+                    }
+                    
                 }
                 else
                     MessageBox.Show("Contraseña incorrecta.");
