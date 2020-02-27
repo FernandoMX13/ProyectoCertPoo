@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace Proyecto
 {
@@ -19,5 +21,8 @@ namespace Proyecto
             Application.Run(new Login());
             //
         }
+        public static string rutaDoc = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "BecarioMart");
+        public static string doc = Path.Combine(rutaDoc, "usu");
+        public static Dictionary<string, string[]> Users = new Dictionary<string, string[]>();
     }
 }

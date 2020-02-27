@@ -38,6 +38,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Gerente = new System.Windows.Forms.RadioButton();
             this.Cajero = new System.Windows.Forms.RadioButton();
+            this.AddUsu = new System.Windows.Forms.Button();
+            this.Regreso = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NombreUsuAdd
@@ -134,12 +136,34 @@
             this.Cajero.Text = "Cajero";
             this.Cajero.UseVisualStyleBackColor = true;
             // 
+            // AddUsu
+            // 
+            this.AddUsu.Location = new System.Drawing.Point(100, 270);
+            this.AddUsu.Name = "AddUsu";
+            this.AddUsu.Size = new System.Drawing.Size(75, 23);
+            this.AddUsu.TabIndex = 10;
+            this.AddUsu.Text = "Agregar";
+            this.AddUsu.UseVisualStyleBackColor = true;
+            this.AddUsu.Click += new System.EventHandler(this.AddUsu_Click);
+            // 
+            // Regreso
+            // 
+            this.Regreso.Location = new System.Drawing.Point(100, 310);
+            this.Regreso.Name = "Regreso";
+            this.Regreso.Size = new System.Drawing.Size(75, 23);
+            this.Regreso.TabIndex = 11;
+            this.Regreso.Text = "Regresar";
+            this.Regreso.UseVisualStyleBackColor = true;
+            this.Regreso.Click += new System.EventHandler(this.Regreso_Click);
+            // 
             // AgregarUsuarioMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 361);
             this.ControlBox = false;
+            this.Controls.Add(this.Regreso);
+            this.Controls.Add(this.AddUsu);
             this.Controls.Add(this.Cajero);
             this.Controls.Add(this.Gerente);
             this.Controls.Add(this.label2);
@@ -175,5 +199,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton Gerente;
         private System.Windows.Forms.RadioButton Cajero;
+        private System.Windows.Forms.Button AddUsu;
+        private System.Windows.Forms.Button Regreso;
     }
 }

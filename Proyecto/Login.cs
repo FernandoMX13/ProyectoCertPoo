@@ -14,7 +14,6 @@ namespace Proyecto
 {
     public partial class Login : Form
     {
-        public static Dictionary<string, string []> Users = new Dictionary<string, string []>();
         public static string getSHA256(string text)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(text);
@@ -38,13 +37,11 @@ namespace Proyecto
         }
         public Login()
         {
-            Users.Clear();
+            Program.Users.Clear();
             string line;
-            string rutaDoc = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "BecarioMart");
             string[] Usrpass = new string[3];
-            string doc = Path.Combine(rutaDoc, "usu");
-            DirectoryInfo dInfo = new DirectoryInfo(rutaDoc);
-            FileInfo passwd = new FileInfo(doc);
+            DirectoryInfo dInfo = new DirectoryInfo(Program.rutaDoc);
+            FileInfo passwd = new FileInfo(Program.doc);
             if (!dInfo.Exists)
             {
                 dInfo.Create();
@@ -53,15 +50,16 @@ namespace Proyecto
             {
                 FileStream fs = passwd.Create();
                 fs.Close();
-                CrearUsuarios(doc);
+                CrearUsuarios(Program.doc);
             }
-            StreamReader file = new StreamReader(doc);
+            StreamReader file = new StreamReader(Program.doc);
             while ((line = file.ReadLine()) != null)
             {
                 Usrpass = line.Split('|');
                 string[] test = { Usrpass[1], Usrpass[2] };
-                Users.Add(Usrpass[0], test);
+                Program.Users.Add(Usrpass[0], test);
             }
+            file.Close();
             InitializeComponent();
         }
 
@@ -73,10 +71,10 @@ namespace Proyecto
         private void LoginBoton_Click(object sender, EventArgs e)
         {
             string checkUser = UsuarioBox.Text;
-            if (Users.ContainsKey(checkUser))
+            if (Program.Users.ContainsKey(checkUser))
             {
                 string checkPassword = getSHA256(ContrasenaBox.Text);
-                string[] pass = Users[checkUser];
+                string[] pass = Program.Users[checkUser];
                 if (pass[0].ToString() == checkPassword)
                 {
                     if (pass[1].ToString() == "gerente")

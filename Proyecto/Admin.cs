@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
+
 
 namespace Proyecto
 {
     public partial class AdminMenu : Form
     {
-        public static Dictionary<string, string[]> Users = new Dictionary<string, string[]>();
         public AdminMenu()
         {
             InitializeComponent();
@@ -34,7 +33,7 @@ namespace Proyecto
 
         private void SalirButton_Click(object sender, EventArgs e)
         {
-            Dispose();
+            Application.Exit();
         }
 
         private void AddUserButton_Click(object sender, EventArgs e)
@@ -42,18 +41,8 @@ namespace Proyecto
             AgregarUsuarioMenu Agregar = new AgregarUsuarioMenu();
             this.Hide();
             Agregar.ShowDialog();
-            /*
-            string line;
-            string rutaDoc = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "BecarioMart");
-            string[] Usrpass = new string[3];
-            string doc = Path.Combine(rutaDoc, "usu");
-            StreamReader file = new StreamReader(doc);
-            while ((line = file.ReadLine()) != null)
-            {
-                Usrpass = line.Split('|');
-                string[] test = { Usrpass[1], Usrpass[2] };
-                Users.Add(Usrpass[0], test);
-            }*/
+            Agregar = null;
+            this.Show();
         }
 
         private void AdminMenu_Load(object sender, EventArgs e)
