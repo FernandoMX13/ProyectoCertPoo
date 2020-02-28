@@ -59,6 +59,12 @@
     <Compile Include="AgregarUsuarioMenu.Designer.cs">
       <DependentUpon>AgregarUsuarioMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="EliminarUsuariosMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarUsuariosMenu.Designer.cs">
+      <DependentUpon>EliminarUsuariosMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     <EmbeddedResource Include="AgregarUsuarioMenu.resx">
       <DependentUpon>AgregarUsuarioMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EliminarUsuariosMenu.resx">
+      <DependentUpon>EliminarUsuariosMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +103,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Login.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

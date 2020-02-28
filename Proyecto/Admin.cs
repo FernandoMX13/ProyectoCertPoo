@@ -49,5 +49,14 @@ namespace Proyecto
         {
 
         }
+
+        private void DeleteUserButton_Click(object sender, EventArgs e)
+        {
+            EliminarUsuariosMenu Eliminar = new EliminarUsuariosMenu();
+            this.Hide();
+            Eliminar.ShowDialog();
+            Eliminar = null;
+            this.Show();
+        }
     }
 }

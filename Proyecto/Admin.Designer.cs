@@ -73,6 +73,7 @@
             this.DeleteUserButton.TabIndex = 3;
             this.DeleteUserButton.Text = "Eliminar Usuario";
             this.DeleteUserButton.UseVisualStyleBackColor = true;
+            this.DeleteUserButton.Click += new System.EventHandler(this.DeleteUserButton_Click);
             // 
             // ReturnLoginButton
             // 
