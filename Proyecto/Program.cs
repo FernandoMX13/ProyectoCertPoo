@@ -18,9 +18,9 @@ namespace Proyecto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
             ProductosArchivo prod = new ProductosArchivo();
-            //
+            Application.Run(new Login());
+           
         }
         public static string rutaDoc = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "BecarioMart");
         public static string doc = Path.Combine(rutaDoc, "usu");
