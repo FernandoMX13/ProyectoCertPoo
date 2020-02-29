@@ -19,10 +19,12 @@ namespace Proyecto
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+            ProductosArchivo prod = new ProductosArchivo();
             //
         }
         public static string rutaDoc = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "BecarioMart");
         public static string doc = Path.Combine(rutaDoc, "usu");
+        public static string prod = Path.Combine(rutaDoc, "prod");
         public static Dictionary<string, string[]> Users = new Dictionary<string, string[]>();
     }
 }

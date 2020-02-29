@@ -44,8 +44,11 @@ namespace Proyecto
                 {
                     string probableDelete = Usuarios.Items[i].ToString();
                     if (probableDelete.Contains("administrador") && admins == 1)
-                        MessageBox.Show("No se eliminaron todos los usuarios se necesita al menos un administrador")
+                        MessageBox.Show("No se eliminaron todos los usuarios se necesita al menos un administrador");
                     else
+                    {
+
+                    }
 
                 }
             }
