@@ -14,6 +14,20 @@ namespace Proyecto
 {
     public partial class Login : Form
     {
+        public static void  actualizaUsers()
+        {
+            string line;
+            string[] Usrpass = new string[3];
+            Program.Users.Clear();
+            StreamReader file = new StreamReader(Program.doc);
+            while ((line = file.ReadLine()) != null)
+            {
+                Usrpass = line.Split('|');
+                string[] test = { Usrpass[1], Usrpass[2] };
+                Program.Users.Add(Usrpass[0], test);
+            }
+            file.Close();
+        }
         public static string getSHA256(string text)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(text);
@@ -38,8 +52,6 @@ namespace Proyecto
         public Login()
         {
             Program.Users.Clear();
-            string line;
-            string[] Usrpass = new string[3];
             DirectoryInfo dInfo = new DirectoryInfo(Program.rutaDoc);
             FileInfo passwd = new FileInfo(Program.doc);
             if (!dInfo.Exists)
@@ -52,14 +64,7 @@ namespace Proyecto
                 fs.Close();
                 CrearUsuarios(Program.doc);
             }
-            StreamReader file = new StreamReader(Program.doc);
-            while ((line = file.ReadLine()) != null)
-            {
-                Usrpass = line.Split('|');
-                string[] test = { Usrpass[1], Usrpass[2] };
-                Program.Users.Add(Usrpass[0], test);
-            }
-            file.Close();
+            actualizaUsers();
             InitializeComponent();
         }
 

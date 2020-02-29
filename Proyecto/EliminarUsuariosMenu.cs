@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +18,6 @@ namespace Proyecto
         public static int admins;
         public EliminarUsuariosMenu()
         {
-            
             InitializeComponent();  
         }
 
@@ -27,31 +28,72 @@ namespace Proyecto
         private void EliminarUsuariosMenu_Load(object sender, EventArgs e)
         {
             string[] dat = new string[2];
+            Login.actualizaUsers();
+            admins = 0;
             foreach (KeyValuePair<string, string[]> all in Program.Users)
             {
                 dat = all.Value.ToArray();
-                Usuarios.Items.Add(all.Key+"-"+dat[1]);
+                Usuarios.Items.Add(all.Key+"\t\t\t"+dat[1]);
                 if (dat[1] == "administrador")
-                    admins++;
+                    admins+=1;
             }
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < Program.Users.Count; i++)
+            bool borre = false;
+            bool advertencia = false;
+            string admin = "";
+            int tam = Program.Users.Count;
+            List<int> borrame = new List<int>();
+            borrame.Clear();
+            for (int i = 0; i < tam; i++)
             {
                 if (Usuarios.GetItemChecked(i) == true) 
                 {
-                    string probableDelete = Usuarios.Items[i].ToString();
-                    if (probableDelete.Contains("administrador") && admins == 1)
-                        MessageBox.Show("No se eliminaron todos los usuarios se necesita al menos un administrador");
+                    string probable = Usuarios.Items[i].ToString();
+                    string result = Regex.Replace(probable, @"\s+", "|");
+                    string [] datosABorrar = result.Split('|');
+                    if (datosABorrar[1].Contains("administrador") && admins == 1)
+                    {
+                        advertencia = true;
+                        admin = datosABorrar[0];
+                    }
                     else
                     {
-
+                        borre = true;
+                        if (datosABorrar[1].Contains("administrador"))
+                            admins -= 1;
+                        Program.Users.Remove(datosABorrar[0]);
+                        borrame.Add(i);
                     }
-
                 }
             }
+            if (advertencia)
+                MessageBox.Show("No se elimino a " + admin + ", el sistema necesita al menos un administrador");
+            if (borre)
+            {
+                string[] dat = new string[2];
+                borrame.Reverse();
+                foreach (int n in borrame)
+                    Usuarios.Items.Remove(Usuarios.Items[n]);
+                using (StreamWriter outputFile = new StreamWriter(Program.doc))
+                {
+                    foreach (KeyValuePair<string, string[]> all in Program.Users)
+                    {
+                        dat = all.Value.ToArray();
+                        outputFile.Write("{0}|{1}|{2}\n", all.Key, dat[0], dat[1]);
+                    }
+                }
+                MessageBox.Show("Eliminación de usuarios terminada.");
+            }
+        }
+
+        private void regreso_Click(object sender, EventArgs e)
+        {
+            Login.actualizaUsers();
+            this.Hide();
+            this.Close();
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Proyecto
         {
             string paswd;
             string puesto;
+            Login.actualizaUsers();
             if (NewName.Text == "")
                 MessageBox.Show("Debe ingresar un nombre");
             else if (NewPassword.Text == "")
@@ -52,7 +53,7 @@ namespace Proyecto
                     puesto = "cajero";
                 using (StreamWriter outputFile = new StreamWriter(Program.doc, true))
                 {
-                    outputFile.Write("{0}|{1}|{2}", NewName.Text, paswd, puesto);
+                    outputFile.Write("{0}|{1}|{2}\n", NewName.Text, paswd, puesto);
                 }
                 MessageBox.Show("Usuario agregado");
                 NewName.Text = "";
@@ -63,7 +64,7 @@ namespace Proyecto
 
         private void Regreso_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Sesión de administrador cerrada.");
+            Login.actualizaUsers();
             this.Hide();
             this.Close();
         }

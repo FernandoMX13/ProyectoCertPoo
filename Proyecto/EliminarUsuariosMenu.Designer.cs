@@ -33,6 +33,7 @@
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.Delete = new System.Windows.Forms.Button();
+            this.regreso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(190, 225);
+            this.Delete.Location = new System.Drawing.Point(184, 205);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 23);
             this.Delete.TabIndex = 2;
@@ -68,12 +69,23 @@
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
+            // regreso
+            // 
+            this.regreso.Location = new System.Drawing.Point(184, 236);
+            this.regreso.Name = "regreso";
+            this.regreso.Size = new System.Drawing.Size(75, 23);
+            this.regreso.TabIndex = 3;
+            this.regreso.Text = "Regresar";
+            this.regreso.UseVisualStyleBackColor = true;
+            this.regreso.Click += new System.EventHandler(this.regreso_Click);
+            // 
             // EliminarUsuariosMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 271);
             this.ControlBox = false;
+            this.Controls.Add(this.regreso);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Usuarios);
@@ -94,5 +106,6 @@
         private System.Windows.Forms.CheckedListBox Usuarios;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button regreso;
     }
 }
