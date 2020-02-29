@@ -179,7 +179,6 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 400);
             this.Name = "AgregarUsuarioMenu";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarUsuarioMenu";
             this.ResumeLayout(false);

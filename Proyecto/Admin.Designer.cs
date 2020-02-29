@@ -112,7 +112,6 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 320);
             this.Name = "AdminMenu";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu de Administración";
             this.Load += new System.EventHandler(this.AdminMenu_Load);
