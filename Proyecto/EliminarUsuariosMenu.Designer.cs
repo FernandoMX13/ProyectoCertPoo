@@ -93,7 +93,7 @@
             this.MinimizeBox = false;
             this.Name = "EliminarUsuariosMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EliminarUsuariosMenu";
+            this.Text = "Eliminar Usuarios";
             this.Load += new System.EventHandler(this.EliminarUsuariosMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             this.ResumeLayout(false);

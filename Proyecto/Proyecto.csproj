@@ -65,6 +65,12 @@
     <Compile Include="AgregarUsuarioMenu.Designer.cs">
       <DependentUpon>AgregarUsuarioMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="EliminarProdMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarProdMenu.Designer.cs">
+      <DependentUpon>EliminarProdMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminarUsuariosMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarUsuarioMenu.resx">
       <DependentUpon>AgregarUsuarioMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarProdMenu.resx">
+      <DependentUpon>EliminarProdMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarUsuariosMenu.resx">
       <DependentUpon>EliminarUsuariosMenu.cs</DependentUpon>

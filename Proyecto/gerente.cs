@@ -41,11 +41,11 @@ namespace Proyecto
 
         private void DeleteProdButton_Click(object sender, EventArgs e)
         {
-            /*EliminarProdMenu Eliminar = new EliminarProdMenu();
+            EliminarProdMenu Eliminar = new EliminarProdMenu();
             this.Hide();
             Eliminar.ShowDialog();
             Eliminar = null;
-            this.Show();*/
+            this.Show();
         }
     }
 }

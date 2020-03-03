@@ -84,11 +84,11 @@ namespace Proyecto
                 {
                     if (pass[1].ToString() == "gerente")
                     {
+                        MessageBox.Show("Bienvenido Gerente");
                         gerenteMenu gerente = new gerenteMenu();
                         this.Hide();
                         gerente.ShowDialog();
                         this.Close();
-                        MessageBox.Show("Bienvenido Gerente");
                     }
                     else if (pass[1].ToString() == "administrador")
                     {

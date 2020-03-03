@@ -59,3 +59,4 @@ C:\Users\ferna\Desktop\POO\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.pdb
 C:\Users\ferna\Desktop\POO\ProyectoCertPoo\Proyecto\bin\Debug\Proyecto.exe.config
 C:\Users\ferna\Desktop\POO\ProyectoCertPoo\Proyecto\bin\Debug\Proyecto.exe
 C:\Users\ferna\Desktop\POO\ProyectoCertPoo\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\ferna\Desktop\POO\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.EliminarProdMenu.resources
