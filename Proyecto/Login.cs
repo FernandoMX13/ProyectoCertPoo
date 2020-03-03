@@ -83,14 +83,20 @@ namespace Proyecto
                 if (pass[0].ToString() == checkPassword)
                 {
                     if (pass[1].ToString() == "gerente")
+                    {
+                        gerenteMenu gerente = new gerenteMenu();
+                        this.Hide();
+                        gerente.ShowDialog();
+                        this.Close();
                         MessageBox.Show("Bienvenido Gerente");
+                    }
                     else if (pass[1].ToString() == "administrador")
                     {
                         MessageBox.Show("Bienvenido Administrador");
                         AdminMenu adminMenu = new AdminMenu();
                         this.Hide();
                         adminMenu.ShowDialog();
-                        
+
                     }
                     else
                     {
