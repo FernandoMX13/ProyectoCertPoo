@@ -96,6 +96,7 @@ namespace Proyecto
                         AdminMenu adminMenu = new AdminMenu();
                         this.Hide();
                         adminMenu.ShowDialog();
+                        this.Close();
 
                     }
                     else

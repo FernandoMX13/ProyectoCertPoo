@@ -63,3 +63,6 @@ C:\Users\ferna\Desktop\POO\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.EliminarP
 C:\Users\Dialid\Documents\GitHub\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.AgregarProdMenu.resources
 C:\Users\Dialid\Documents\GitHub\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.EliminarProdMenu.resources
 C:\Users\Dialid\Documents\GitHub\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.gerenteMenu.resources
+C:\Users\ferna\Desktop\POO\Git\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.AgregarProdMenu.resources
+C:\Users\ferna\Desktop\POO\Git\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.EliminarProdMenu.resources
+C:\Users\ferna\Desktop\POO\Git\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.gerenteMenu.resources
