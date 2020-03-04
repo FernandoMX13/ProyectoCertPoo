@@ -60,3 +60,6 @@ C:\Users\ferna\Desktop\POO\ProyectoCertPoo\Proyecto\bin\Debug\Proyecto.exe.confi
 C:\Users\ferna\Desktop\POO\ProyectoCertPoo\Proyecto\bin\Debug\Proyecto.exe
 C:\Users\ferna\Desktop\POO\ProyectoCertPoo\Proyecto\bin\Debug\Proyecto.pdb
 C:\Users\ferna\Desktop\POO\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.EliminarProdMenu.resources
+C:\Users\Dialid\Documents\GitHub\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.AgregarProdMenu.resources
+C:\Users\Dialid\Documents\GitHub\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.EliminarProdMenu.resources
+C:\Users\Dialid\Documents\GitHub\ProyectoCertPoo\Proyecto\obj\Debug\Proyecto.gerenteMenu.resources

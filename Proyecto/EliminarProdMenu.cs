@@ -42,8 +42,6 @@ namespace Proyecto
         private void delete_Click(object sender, EventArgs e)
         {
             bool borre = false;
-            bool advertencia = false;
-            string admin = "";
             int tam = AgregarProdMenu.Prods.Count;
             int total = tam;
             List<int> borrame = new List<int>();

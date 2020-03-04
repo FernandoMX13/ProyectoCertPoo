@@ -42,7 +42,6 @@
             this.labelProductoCabecera = new System.Windows.Forms.Label();
             this.labelCantidadCabecera = new System.Windows.Forms.Label();
             this.labelPrecioCabecera = new System.Windows.Forms.Label();
-            this.buttonGenerarTicket = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.labelPago = new System.Windows.Forms.Label();
             this.textBoxPago = new System.Windows.Forms.TextBox();
@@ -207,20 +206,10 @@
             this.labelPrecioCabecera.Text = "Precio";
             this.labelPrecioCabecera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonGenerarTicket
-            // 
-            this.buttonGenerarTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGenerarTicket.Location = new System.Drawing.Point(109, 277);
-            this.buttonGenerarTicket.Name = "buttonGenerarTicket";
-            this.buttonGenerarTicket.Size = new System.Drawing.Size(159, 33);
-            this.buttonGenerarTicket.TabIndex = 22;
-            this.buttonGenerarTicket.Text = "Generar Ticket";
-            this.buttonGenerarTicket.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(344, 277);
+            this.button1.Location = new System.Drawing.Point(186, 278);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 33);
             this.button1.TabIndex = 23;
@@ -274,6 +263,7 @@
             this.buttonPagar.TabIndex = 28;
             this.buttonPagar.Text = "Pagar";
             this.buttonPagar.UseVisualStyleBackColor = true;
+            this.buttonPagar.Click += new System.EventHandler(this.buttonPagar_Click);
             // 
             // labelProductoMostrado
             // 
@@ -370,7 +360,6 @@
             this.Controls.Add(this.textBoxPago);
             this.Controls.Add(this.labelPago);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.buttonGenerarTicket);
             this.Controls.Add(this.labelPrecioCabecera);
             this.Controls.Add(this.labelCantidadCabecera);
             this.Controls.Add(this.labelProductoCabecera);
@@ -412,7 +401,6 @@
         private System.Windows.Forms.Label labelProductoCabecera;
         private System.Windows.Forms.Label labelCantidadCabecera;
         private System.Windows.Forms.Label labelPrecioCabecera;
-        private System.Windows.Forms.Button buttonGenerarTicket;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelPago;
         private System.Windows.Forms.TextBox textBoxPago;

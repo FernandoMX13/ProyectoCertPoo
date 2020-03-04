@@ -25,6 +25,8 @@ namespace Proyecto
         public static string rutaDoc = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "BecarioMart");
         public static string doc = Path.Combine(rutaDoc, "usu");
         public static string prod = Path.Combine(rutaDoc, "prod");
+        public static string ticket = Path.Combine(rutaDoc, "ticket.txt");
+        public static string compras = Path.Combine(rutaDoc, "compras.txt");
         public static Dictionary<string, string[]> Users = new Dictionary<string, string[]>();
     }
 }

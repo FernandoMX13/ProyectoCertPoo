@@ -157,19 +157,81 @@ namespace Proyecto
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult cancelar = MessageBox.Show("¿Está seguro de que desea cancelar la compra?", "Cancelar compra", MessageBoxButtons.YesNo);
-            if(cancelar == DialogResult.Yes)
+            if (cancelar == DialogResult.Yes)
+                limpiar_todo();
+        }
+
+        private void buttonPagar_Click(object sender, EventArgs e)
+        {
+            double pago = Convert.ToDouble(textBoxPago.Text);
+            if (pago >= total)
             {
-                //Limpiamos todo
-                listboxProductosLista.Items.Clear();
-                listboxCantidadLista.Items.Clear();
-                listboxPrecioLista.Items.Clear();
-                labelProductoMostrado.Text = "";
-                labelPrecioMostrado.Text = "";
-                CodigoProdBox.Text = "";
-                ticket.Clear();
-                total = 0;
-                PagarLabel.Text = "$" + total.ToString();
-                CantidadNumero.Value = 1;
+                MessageBox.Show("Su cambio: $"+ (pago - total).ToString() + " \n¡Gracias por su compra! ¡Vuelva pronto!");
+                archivo_ticket();
+                archivo_compras();
+                limpiar_todo();
+            }
+            else
+                MessageBox.Show("Dinero insuficiente para pagar la compra. Favor de aumentar el pago o cancelar la compra.");
+        }
+
+        private void limpiar_todo()
+        {
+            //Limpiamos todo
+            listboxProductosLista.Items.Clear();
+            listboxCantidadLista.Items.Clear();
+            listboxPrecioLista.Items.Clear();
+            labelProductoMostrado.Text = "";
+            labelPrecioMostrado.Text = "";
+            CodigoProdBox.Text = "";
+            textBoxPago.Text = "";
+            ticket.Clear();
+            total = 0;
+            PagarLabel.Text = "$" + total.ToString();
+            CantidadNumero.Value = 1;
+        }
+
+        private void archivo_ticket()
+        {
+            FileInfo info_t = new FileInfo(Program.ticket);
+            DirectoryInfo tInfo = new DirectoryInfo(Program.rutaDoc);
+            if (!tInfo.Exists)
+            {
+                tInfo.Create();
+            }
+            FileStream fs = info_t.Create();
+            fs.Close();
+            using (StreamWriter File = new StreamWriter(Program.ticket))
+            {
+                File.WriteLine(DateTime.Now.ToString());
+                File.WriteLine("ID Producto | Nombre del Producto | Precio del producto | Cantidad");
+                foreach (KeyValuePair<string, int> prod in ticket)
+                {
+                    File.WriteLine("{0} | {1} | {2} | {3}",
+                        prod.Key, Prods[prod.Key][0].ToString(), "$" + Prods[prod.Key][1].ToString(), prod.Value);
+
+                }
+                File.WriteLine("Total: ${0}", total);
+            }
+        }
+
+        private void archivo_compras()
+        {
+            FileInfo compras = new FileInfo(Program.compras);
+            DirectoryInfo cInfo = new DirectoryInfo(Program.rutaDoc);
+            if (!cInfo.Exists)
+            {
+                cInfo.Create();
+            }
+            if (!compras.Exists)
+            {
+                FileStream fs = compras.Create();
+                fs.Close();
+            }
+            using (StreamWriter com= File.AppendText(Program.compras))
+            {
+                com.WriteLine("Compra registrada");
+                com.WriteLine(DateTime.Now.ToString());
             }
         }
     }
