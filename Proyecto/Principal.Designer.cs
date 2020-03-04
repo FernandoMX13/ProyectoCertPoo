@@ -53,6 +53,7 @@
             this.listboxProductosLista = new System.Windows.Forms.ListBox();
             this.listboxCantidadLista = new System.Windows.Forms.ListBox();
             this.listboxPrecioLista = new System.Windows.Forms.ListBox();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumero)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSesiónToolStripMenuItem,
             this.salirMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -321,6 +323,13 @@
             this.listboxPrecioLista.Size = new System.Drawing.Size(106, 324);
             this.listboxPrecioLista.TabIndex = 36;
             // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,5 +398,6 @@
         private System.Windows.Forms.ListBox listboxProductosLista;
         private System.Windows.Forms.ListBox listboxCantidadLista;
         private System.Windows.Forms.ListBox listboxPrecioLista;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
     }
 }

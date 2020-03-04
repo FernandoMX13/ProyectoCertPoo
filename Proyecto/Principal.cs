@@ -248,5 +248,17 @@ namespace Proyecto
                 com.WriteLine(DateTime.Now.ToString());
             }
         }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult cerrarSesion = MessageBox.Show("¿Está seguro de que desea cerrar sesión?", "Regresar al Login", MessageBoxButtons.YesNo);
+            if (cerrarSesion == DialogResult.Yes)
+            {
+                Login login = new Login();
+                this.Hide();
+                login.ShowDialog();
+                this.Close();
+            }
+        }
     }
 }
