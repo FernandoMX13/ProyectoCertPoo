@@ -41,6 +41,7 @@
             // 
             this.Usuarios.CheckOnClick = true;
             this.Usuarios.FormattingEnabled = true;
+            this.Usuarios.HorizontalScrollbar = true;
             this.Usuarios.Location = new System.Drawing.Point(8, 60);
             this.Usuarios.Name = "Usuarios";
             this.Usuarios.Size = new System.Drawing.Size(431, 139);

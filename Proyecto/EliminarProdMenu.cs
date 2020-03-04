@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -39,7 +40,7 @@ namespace Proyecto
         }
 
         private void delete_Click(object sender, EventArgs e)
-        {/*
+        {
             bool borre = false;
             bool advertencia = false;
             string admin = "";
@@ -54,32 +55,32 @@ namespace Proyecto
                     string probable = productosToDeleteList.Items[i].ToString();
                     string result = Regex.Replace(probable, @"\s+", "|");
                     string[] datosABorrar = result.Split('|');
-                    
+                    if (total > 1)
+                    {
                         borre = true;
-                        if (datosABorrar[1].Contains("administrador"))
-                            admins -= 1;
-                        Program.Users.Remove(datosABorrar[0]);
+                        AgregarProdMenu.Prods.Remove(datosABorrar[0]);
                         borrame.Add(i);
+                    }
+                    else
+                        MessageBox.Show("No se puede eliminar el siguiente registro, se necesita al menos un producto registrado.\n"+ productosToDeleteList.Items[i].ToString());
                 }
             }
-            if (advertencia)
-                MessageBox.Show("No se elimino a " + admin + ", el sistema necesita al menos un administrador");
             if (borre)
             {
                 string[] dat = new string[2];
                 borrame.Reverse();
                 foreach (int n in borrame)
-                    Usuarios.Items.Remove(Usuarios.Items[n]);
-                using (StreamWriter outputFile = new StreamWriter(Program.doc))
+                    productosToDeleteList.Items.Remove(productosToDeleteList.Items[n]);
+                using (StreamWriter outputFile = new StreamWriter(Program.prod))
                 {
-                    foreach (KeyValuePair<string, string[]> all in Program.Users)
+                    foreach (KeyValuePair<string, string[]> all in AgregarProdMenu.Prods)
                     {
                         dat = all.Value.ToArray();
                         outputFile.Write("{0}|{1}|{2}\n", all.Key, dat[0], dat[1]);
                     }
                 }
-                MessageBox.Show("Eliminación de usuarios terminada.");
-            }*/
+                MessageBox.Show("Eliminación de productos terminada.");
+            }
         }
 
         private void regreso_Click(object sender, EventArgs e)
