@@ -33,9 +33,9 @@ namespace Proyecto
             {
                 dat = all.Value.ToArray();
                 if (dat[0].Length > 20)
-                    productosToDeleteList.Items.Add(all.Key + "\t" + dat[0].Substring(0,20) + "\t\t\t\t" + dat[1]);
+                    productosToDeleteList.Items.Add(all.Key + "\t" + dat[0].Substring(0,19) + "\t\t\t" + dat[1]);
                 else
-                    productosToDeleteList.Items.Add(all.Key + "\t" + dat[0] + "\t\t\t\t" + dat[1]);
+                    productosToDeleteList.Items.Add(all.Key + "\t" + dat[0].PadRight(21,' ') + "\t\t\t\t" + dat[1]);
             }
         }
 
