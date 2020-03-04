@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.buscarMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.salirMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductoLabel = new System.Windows.Forms.Label();
             this.PrecioLabel = new System.Windows.Forms.Label();
@@ -43,9 +42,6 @@
             this.labelProductoCabecera = new System.Windows.Forms.Label();
             this.labelCantidadCabecera = new System.Windows.Forms.Label();
             this.labelPrecioCabecera = new System.Windows.Forms.Label();
-            this.labelProductosLista = new System.Windows.Forms.Label();
-            this.labelCantidadLista = new System.Windows.Forms.Label();
-            this.labelPrecioLista = new System.Windows.Forms.Label();
             this.buttonGenerarTicket = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.labelPago = new System.Windows.Forms.Label();
@@ -53,31 +49,27 @@
             this.labelCambio = new System.Windows.Forms.Label();
             this.labelCambioDevuelto = new System.Windows.Forms.Label();
             this.buttonPagar = new System.Windows.Forms.Button();
-            this.buttonReiniciar = new System.Windows.Forms.Button();
             this.labelProductoMostrado = new System.Windows.Forms.Label();
             this.labelPrecioMostrado = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.CantidadNumero = new System.Windows.Forms.NumericUpDown();
+            this.listboxProductosLista = new System.Windows.Forms.ListBox();
+            this.listboxCantidadLista = new System.Windows.Forms.ListBox();
+            this.listboxPrecioLista = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadNumero)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.buscarMenu,
             this.salirMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1186, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // buscarMenu
-            // 
-            this.buscarMenu.Name = "buscarMenu";
-            this.buscarMenu.Size = new System.Drawing.Size(54, 20);
-            this.buscarMenu.Text = "Buscar";
             // 
             // salirMenu
             // 
@@ -137,7 +129,7 @@
             // AgregarAlCarro
             // 
             this.AgregarAlCarro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarAlCarro.Location = new System.Drawing.Point(46, 218);
+            this.AgregarAlCarro.Location = new System.Drawing.Point(109, 218);
             this.AgregarAlCarro.Name = "AgregarAlCarro";
             this.AgregarAlCarro.Size = new System.Drawing.Size(96, 33);
             this.AgregarAlCarro.TabIndex = 7;
@@ -148,18 +140,19 @@
             // EliminarProdBoton
             // 
             this.EliminarProdBoton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarProdBoton.Location = new System.Drawing.Point(211, 218);
+            this.EliminarProdBoton.Location = new System.Drawing.Point(344, 218);
             this.EliminarProdBoton.Name = "EliminarProdBoton";
             this.EliminarProdBoton.Size = new System.Drawing.Size(96, 33);
             this.EliminarProdBoton.TabIndex = 8;
             this.EliminarProdBoton.Text = "Eliminar";
             this.EliminarProdBoton.UseVisualStyleBackColor = true;
+            this.EliminarProdBoton.Click += new System.EventHandler(this.EliminarProdBoton_Click);
             // 
             // TotalLabel
             // 
             this.TotalLabel.AutoSize = true;
             this.TotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalLabel.Location = new System.Drawing.Point(594, 405);
+            this.TotalLabel.Location = new System.Drawing.Point(978, 401);
             this.TotalLabel.Name = "TotalLabel";
             this.TotalLabel.Size = new System.Drawing.Size(62, 25);
             this.TotalLabel.TabIndex = 14;
@@ -169,7 +162,7 @@
             // 
             this.PagarLabel.AutoSize = true;
             this.PagarLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PagarLabel.Location = new System.Drawing.Point(699, 405);
+            this.PagarLabel.Location = new System.Drawing.Point(1058, 401);
             this.PagarLabel.Name = "PagarLabel";
             this.PagarLabel.Size = new System.Drawing.Size(61, 25);
             this.PagarLabel.TabIndex = 15;
@@ -181,9 +174,9 @@
             this.labelProductoCabecera.BackColor = System.Drawing.SystemColors.Window;
             this.labelProductoCabecera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelProductoCabecera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductoCabecera.Location = new System.Drawing.Point(409, 32);
+            this.labelProductoCabecera.Location = new System.Drawing.Point(597, 33);
             this.labelProductoCabecera.Name = "labelProductoCabecera";
-            this.labelProductoCabecera.Size = new System.Drawing.Size(191, 29);
+            this.labelProductoCabecera.Size = new System.Drawing.Size(387, 29);
             this.labelProductoCabecera.TabIndex = 16;
             this.labelProductoCabecera.Text = "Producto";
             this.labelProductoCabecera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -194,7 +187,7 @@
             this.labelCantidadCabecera.BackColor = System.Drawing.SystemColors.Window;
             this.labelCantidadCabecera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelCantidadCabecera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCantidadCabecera.Location = new System.Drawing.Point(599, 32);
+            this.labelCantidadCabecera.Location = new System.Drawing.Point(983, 33);
             this.labelCantidadCabecera.Name = "labelCantidadCabecera";
             this.labelCantidadCabecera.Size = new System.Drawing.Size(81, 29);
             this.labelCantidadCabecera.TabIndex = 17;
@@ -207,51 +200,17 @@
             this.labelPrecioCabecera.BackColor = System.Drawing.SystemColors.Window;
             this.labelPrecioCabecera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelPrecioCabecera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrecioCabecera.Location = new System.Drawing.Point(679, 32);
+            this.labelPrecioCabecera.Location = new System.Drawing.Point(1063, 33);
             this.labelPrecioCabecera.Name = "labelPrecioCabecera";
-            this.labelPrecioCabecera.Size = new System.Drawing.Size(81, 29);
+            this.labelPrecioCabecera.Size = new System.Drawing.Size(106, 29);
             this.labelPrecioCabecera.TabIndex = 18;
             this.labelPrecioCabecera.Text = "Precio";
             this.labelPrecioCabecera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelProductosLista
-            // 
-            this.labelProductosLista.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelProductosLista.BackColor = System.Drawing.SystemColors.Window;
-            this.labelProductosLista.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelProductosLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductosLista.Location = new System.Drawing.Point(409, 60);
-            this.labelProductosLista.Name = "labelProductosLista";
-            this.labelProductosLista.Size = new System.Drawing.Size(191, 329);
-            this.labelProductosLista.TabIndex = 19;
-            // 
-            // labelCantidadLista
-            // 
-            this.labelCantidadLista.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelCantidadLista.BackColor = System.Drawing.SystemColors.Window;
-            this.labelCantidadLista.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelCantidadLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCantidadLista.Location = new System.Drawing.Point(599, 60);
-            this.labelCantidadLista.Name = "labelCantidadLista";
-            this.labelCantidadLista.Size = new System.Drawing.Size(81, 329);
-            this.labelCantidadLista.TabIndex = 20;
-            this.labelCantidadLista.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // labelPrecioLista
-            // 
-            this.labelPrecioLista.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelPrecioLista.BackColor = System.Drawing.SystemColors.Window;
-            this.labelPrecioLista.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelPrecioLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrecioLista.Location = new System.Drawing.Point(679, 60);
-            this.labelPrecioLista.Name = "labelPrecioLista";
-            this.labelPrecioLista.Size = new System.Drawing.Size(81, 329);
-            this.labelPrecioLista.TabIndex = 21;
-            // 
             // buttonGenerarTicket
             // 
             this.buttonGenerarTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGenerarTicket.Location = new System.Drawing.Point(12, 286);
+            this.buttonGenerarTicket.Location = new System.Drawing.Point(109, 277);
             this.buttonGenerarTicket.Name = "buttonGenerarTicket";
             this.buttonGenerarTicket.Size = new System.Drawing.Size(159, 33);
             this.buttonGenerarTicket.TabIndex = 22;
@@ -261,12 +220,13 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(211, 286);
+            this.button1.Location = new System.Drawing.Point(344, 277);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 33);
             this.button1.TabIndex = 23;
             this.button1.Text = "Cancelar compra";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelPago
             // 
@@ -315,16 +275,6 @@
             this.buttonPagar.Text = "Pagar";
             this.buttonPagar.UseVisualStyleBackColor = true;
             // 
-            // buttonReiniciar
-            // 
-            this.buttonReiniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReiniciar.Location = new System.Drawing.Point(409, 401);
-            this.buttonReiniciar.Name = "buttonReiniciar";
-            this.buttonReiniciar.Size = new System.Drawing.Size(96, 33);
-            this.buttonReiniciar.TabIndex = 29;
-            this.buttonReiniciar.Text = "Reiniciar";
-            this.buttonReiniciar.UseVisualStyleBackColor = true;
-            // 
             // labelProductoMostrado
             // 
             this.labelProductoMostrado.AutoSize = true;
@@ -372,16 +322,48 @@
             0,
             0});
             // 
+            // listboxProductosLista
+            // 
+            this.listboxProductosLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listboxProductosLista.FormattingEnabled = true;
+            this.listboxProductosLista.ItemHeight = 20;
+            this.listboxProductosLista.Location = new System.Drawing.Point(597, 61);
+            this.listboxProductosLista.Name = "listboxProductosLista";
+            this.listboxProductosLista.Size = new System.Drawing.Size(387, 324);
+            this.listboxProductosLista.TabIndex = 34;
+            // 
+            // listboxCantidadLista
+            // 
+            this.listboxCantidadLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listboxCantidadLista.FormattingEnabled = true;
+            this.listboxCantidadLista.ItemHeight = 20;
+            this.listboxCantidadLista.Location = new System.Drawing.Point(983, 61);
+            this.listboxCantidadLista.Name = "listboxCantidadLista";
+            this.listboxCantidadLista.Size = new System.Drawing.Size(81, 324);
+            this.listboxCantidadLista.TabIndex = 35;
+            // 
+            // listboxPrecioLista
+            // 
+            this.listboxPrecioLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listboxPrecioLista.FormattingEnabled = true;
+            this.listboxPrecioLista.ItemHeight = 20;
+            this.listboxPrecioLista.Location = new System.Drawing.Point(1063, 61);
+            this.listboxPrecioLista.Name = "listboxPrecioLista";
+            this.listboxPrecioLista.Size = new System.Drawing.Size(106, 324);
+            this.listboxPrecioLista.TabIndex = 36;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1186, 450);
+            this.Controls.Add(this.listboxPrecioLista);
+            this.Controls.Add(this.listboxCantidadLista);
+            this.Controls.Add(this.listboxProductosLista);
             this.Controls.Add(this.CantidadNumero);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.labelPrecioMostrado);
             this.Controls.Add(this.labelProductoMostrado);
-            this.Controls.Add(this.buttonReiniciar);
             this.Controls.Add(this.buttonPagar);
             this.Controls.Add(this.labelCambioDevuelto);
             this.Controls.Add(this.labelCambio);
@@ -389,9 +371,6 @@
             this.Controls.Add(this.labelPago);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonGenerarTicket);
-            this.Controls.Add(this.labelPrecioLista);
-            this.Controls.Add(this.labelCantidadLista);
-            this.Controls.Add(this.labelProductosLista);
             this.Controls.Add(this.labelPrecioCabecera);
             this.Controls.Add(this.labelCantidadCabecera);
             this.Controls.Add(this.labelProductoCabecera);
@@ -420,7 +399,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem buscarMenu;
         private System.Windows.Forms.ToolStripMenuItem salirMenu;
         private System.Windows.Forms.Label ProductoLabel;
         private System.Windows.Forms.Label PrecioLabel;
@@ -434,9 +412,6 @@
         private System.Windows.Forms.Label labelProductoCabecera;
         private System.Windows.Forms.Label labelCantidadCabecera;
         private System.Windows.Forms.Label labelPrecioCabecera;
-        private System.Windows.Forms.Label labelProductosLista;
-        private System.Windows.Forms.Label labelCantidadLista;
-        private System.Windows.Forms.Label labelPrecioLista;
         private System.Windows.Forms.Button buttonGenerarTicket;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelPago;
@@ -444,10 +419,12 @@
         private System.Windows.Forms.Label labelCambio;
         private System.Windows.Forms.Label labelCambioDevuelto;
         private System.Windows.Forms.Button buttonPagar;
-        private System.Windows.Forms.Button buttonReiniciar;
         private System.Windows.Forms.Label labelProductoMostrado;
         private System.Windows.Forms.Label labelPrecioMostrado;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.NumericUpDown CantidadNumero;
+        private System.Windows.Forms.ListBox listboxProductosLista;
+        private System.Windows.Forms.ListBox listboxCantidadLista;
+        private System.Windows.Forms.ListBox listboxPrecioLista;
     }
 }
