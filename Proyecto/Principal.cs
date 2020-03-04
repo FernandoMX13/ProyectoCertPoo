@@ -163,16 +163,30 @@ namespace Proyecto
 
         private void buttonPagar_Click(object sender, EventArgs e)
         {
-            double pago = Convert.ToDouble(textBoxPago.Text);
-            if (pago >= total)
+            try
             {
-                MessageBox.Show("Su cambio: $"+ (pago - total).ToString() + " \n¡Gracias por su compra! ¡Vuelva pronto!");
-                archivo_ticket();
-                archivo_compras();
-                limpiar_todo();
+                double pago = Convert.ToDouble(textBoxPago.Text);
+                if (ticket.Count > 0)
+                    if (pago >= total)
+                    {
+                        MessageBox.Show("Su cambio: $" + (pago - total).ToString() + " \n¡Gracias por su compra! ¡Vuelva pronto!");
+                        archivo_ticket();
+                        archivo_compras();
+                        limpiar_todo();
+                    }
+                    else
+                        MessageBox.Show("Dinero insuficiente para pagar la compra. Favor de aumentar el pago o cancelar la compra.");
+                else
+                {
+                    MessageBox.Show("No hay productos agregados a la cuenta");
+                    textBoxPago.Text = "";
+                }
             }
-            else
-                MessageBox.Show("Dinero insuficiente para pagar la compra. Favor de aumentar el pago o cancelar la compra.");
+            catch (FormatException)
+            {
+                MessageBox.Show("Debes ingresar una cantidad numérica en el campo de pago");
+                textBoxPago.Text = "";
+            }
         }
 
         private void limpiar_todo()

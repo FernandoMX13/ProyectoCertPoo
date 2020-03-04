@@ -45,8 +45,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.labelPago = new System.Windows.Forms.Label();
             this.textBoxPago = new System.Windows.Forms.TextBox();
-            this.labelCambio = new System.Windows.Forms.Label();
-            this.labelCambioDevuelto = new System.Windows.Forms.Label();
             this.buttonPagar = new System.Windows.Forms.Button();
             this.labelProductoMostrado = new System.Windows.Forms.Label();
             this.labelPrecioMostrado = new System.Windows.Forms.Label();
@@ -235,25 +233,6 @@
             this.textBoxPago.Size = new System.Drawing.Size(136, 30);
             this.textBoxPago.TabIndex = 25;
             // 
-            // labelCambio
-            // 
-            this.labelCambio.AutoSize = true;
-            this.labelCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCambio.Location = new System.Drawing.Point(21, 394);
-            this.labelCambio.Name = "labelCambio";
-            this.labelCambio.Size = new System.Drawing.Size(86, 25);
-            this.labelCambio.TabIndex = 26;
-            this.labelCambio.Text = "Cambio:";
-            // 
-            // labelCambioDevuelto
-            // 
-            this.labelCambioDevuelto.AutoSize = true;
-            this.labelCambioDevuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCambioDevuelto.Location = new System.Drawing.Point(167, 394);
-            this.labelCambioDevuelto.Name = "labelCambioDevuelto";
-            this.labelCambioDevuelto.Size = new System.Drawing.Size(0, 25);
-            this.labelCambioDevuelto.TabIndex = 27;
-            // 
             // buttonPagar
             // 
             this.buttonPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -355,8 +334,6 @@
             this.Controls.Add(this.labelPrecioMostrado);
             this.Controls.Add(this.labelProductoMostrado);
             this.Controls.Add(this.buttonPagar);
-            this.Controls.Add(this.labelCambioDevuelto);
-            this.Controls.Add(this.labelCambio);
             this.Controls.Add(this.textBoxPago);
             this.Controls.Add(this.labelPago);
             this.Controls.Add(this.button1);
@@ -404,8 +381,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelPago;
         private System.Windows.Forms.TextBox textBoxPago;
-        private System.Windows.Forms.Label labelCambio;
-        private System.Windows.Forms.Label labelCambioDevuelto;
         private System.Windows.Forms.Button buttonPagar;
         private System.Windows.Forms.Label labelProductoMostrado;
         private System.Windows.Forms.Label labelPrecioMostrado;
