@@ -63,6 +63,36 @@ En esta seccion se muestra la lista de productos permitiendo seleccionar que pro
 
 Para acceder a esta seccion es necesario acceder con el nombre de usuario: Fer y contraseña: qwerty desde el login
 
+![Interfaz del cajero](img/Cajero1.jpg)
+
+La interfaz funciona ingresando un código de producto. Al presionar el botón "OK" se muestran los datos del producto. El cajero también agregará la cantidad de elementos de ese producto que agregará.
+
+![Datos del producto](img/Cajero2.jpg)
+
+Si se presiona el botón de "Agregar" se agregará a la lista de productos a comprar.
+
+![Producto agregado al carrito](img/Cajero3.jpg)
+
+Para quitar un producto de la lista se vuelve a ingresar el código del producto para ver sus datos, y se presiona el botón de eliminar. Sin imporar el valor de "Cantidad" que se le indique, sólo se eliminará 1 de ese producto.
+
+![Eliminar producto](img/Cajero5.jpg)
+
+Para finalizar la compra, en el cuadro para pagar se ingresa la cantidad que el cliente dará como pago.
+
+![Pagar](img/Cajero6.jpg)
+
+Si el dinero es igual o mayor, la compra se llevó a cabo con éxito.
+
+![Compra finalizada](img/Cajero7.jpg)
+
+Si el dinero es insuficiente, se le pide ingresar una cantidad mayor.
+
+![Dinero insuficiente](img/Cajero8.jpg)
+
+El botón de "Cancelar compra" elimina la lista de productos a comprar y reinicia el cajero.
+
+![Cancelar compra](img/Cajero9.jpg)
+
 ## General
 
 El programa genera una carpeta llamada "BecarioMart" donde es contenido los usuarios, productos y historila de tickets y el ticket de la ultima compra.
